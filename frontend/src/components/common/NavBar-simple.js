@@ -9,8 +9,6 @@ const NavbarSimple = () => {
   return (
     <nav className="navbar-container">
       <div className="navbar-toolbar">
-       
-      
       <ul
           onClick={() => navigate("/")}
           className="icon-class"
@@ -22,8 +20,8 @@ const NavbarSimple = () => {
           }
           </li>
           <li>
-            <span className="" style={{"font-weight":700,"font-size":"1.4rem"}}>Venom's</span>
-            <span className="" style={{"font-weight":800,"color":"#1C8765","font-size":"1.4rem"}}>Code</span>
+            <span className="" style={{"font-weight":700,"font-size":"1.4rem"}}>Real</span>
+            <span className="" style={{"font-weight":800,"color":"#1C8765","font-size":"1.4rem"}}>Chat</span>
           </li>
         </ul>
 

@@ -121,7 +121,6 @@ const Chat = ({ data, cancel }) => {
             <ArrowBackIosRoundedIcon></ArrowBackIosRoundedIcon>
           </IconButton>
         )}
-
        <div>
           <Avatar src={activeUser?.profilePicture}></Avatar>
           <div className="username-messenger">

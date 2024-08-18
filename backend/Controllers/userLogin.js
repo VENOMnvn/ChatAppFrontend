@@ -1,6 +1,4 @@
-const Token = require('../MongoDB/TokenSchema');
 const User = require('../MongoDB/UserSchema');
-const {sendToken} = require('./SendOtp');
 const bcrypt = require('bcrypt');
 const axios = require('axios');
 const { createToken } = require('../middleware/auth');
@@ -81,6 +79,7 @@ const googlesignin = async (req,res)=>{
                         const hashPassword = await bcrypt.hash(password, salt);
                         const user = {
                             email:dataFromGoogle.data.email,
+                            username:dataFromGoogle.data.email?.split('@')[0],
                             profilePicture:dataFromGoogle.data.picture,
                             password:hashPassword,
                         }

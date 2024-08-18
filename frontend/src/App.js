@@ -43,6 +43,7 @@ function App() {
         <div className="App">
           <NavbarSimple></NavbarSimple>
           <Routes>
+            <Route path="/" index element={<Messenger></Messenger>}></Route>
             <Route path="/chat" element={<Messenger></Messenger>}></Route>
             <Route
               path="/pleaselogin"

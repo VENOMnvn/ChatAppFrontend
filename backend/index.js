@@ -2,10 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const connectdb = require("./config/connectdb.js");
 const routes = require("./routes/routes.js");
-const { notFound, errorHandler } = require("./middleware/errorMiddleware.js");
 const cookieParser = require("cookie-parser");
 const User = require("./MongoDB/UserSchema.js");
-const POSTS = require("./MongoDB/postSchema.js");
 const app = express();
 const port = process.env.PORT || 5000;
 let socketUsers = [];
@@ -38,27 +36,7 @@ app.get("/check-online-user",(req,res)=>{
   res.send(status);
 
 })
-
 app.use(routes);
-app.use(notFound);
-app.use(errorHandler);
-
-const EmptyAll = async () => {
-  const users = await User.find();
-  users.forEach((user) => {
-    user.followers = [];
-    user.following = [];
-    user.save();
-  });
-
-  const posts = await POSTS.find();
-  posts.forEach((post) => {
-    post.likes = [];
-    post.save();
-  });
-};
-
-// EmptyAll();
 
 const server = app.listen(port, () => {
   console.log(`run on the ${port}`);

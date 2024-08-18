@@ -1,13 +1,12 @@
-const Notification = require("../MongoDB/NotificationSchema");
 const User = require("./../MongoDB/UserSchema");
 // import {v2 as cloudinary} from 'cloudinary';
-const cloudinary = require("cloudinary");
+// const cloudinary = require("cloudinary");
 
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLIENT_NAME,
-  api_key: process.env.CLOUDINARY_CLIENT_API,
-  api_secret: process.env.CLOUDINARY_CLIENT_SECRET_KEY,
-});
+// cloudinary.config({
+//   cloud_name: process.env.CLOUDINARY_CLIENT_NAME,
+//   api_key: process.env.CLOUDINARY_CLIENT_API,
+//   api_secret: process.env.CLOUDINARY_CLIENT_SECRET_KEY,
+// });
 
 const getUserQuery = async (req, res) => {
   const {limit} = req.query;
